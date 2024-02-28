@@ -1,0 +1,462 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+
+  <title>KrishiCulture-Sellers Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff;
+  color: #000;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+a {
+  color: #262626;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Nav */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 20px 0;
+  font-size: 13px;
+}
+
+.main-nav .logo {
+  width: 110px;
+}
+
+.main-nav ul {
+  display: flex;
+}
+
+.main-nav ul li {
+  padding: 0 10px;
+}
+
+.main-nav ul li a {
+  padding-bottom: 2px;
+}
+
+.main-nav ul li a:hover {
+  border-bottom: 2px solid #262626;
+}
+
+.main-nav ul.main-menu {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.menu-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 2;
+  display: none;
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  font-weight: bold;
+  padding: 10px 20px;
+  background: #262626;
+  color: #fff;
+  font-size: 15px;;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.dark {
+  color: #fff;
+}
+
+.dark .btn {
+  background: #f4f4f4;
+  color: #333;
+}
+
+/* Showcase */
+.showcase {
+  width: 100%;
+  height: 400px;
+  background: url('https://plus.unsplash.com/premium_photo-1671149785230-bf9fc44e3829?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8d2hlYXR8ZW58MHx8MHx8fDA%3D') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-end;
+  padding-bottom: 50px;
+  margin-bottom: 20px;
+}
+
+.showcase h2, .showcase p {
+  margin-bottom: 10px;
+}
+
+.showcase .btn {
+  margin-top: 20px;
+}
+
+/* Home cards */
+.home-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  margin-bottom: 40px;
+}
+
+.home-cards img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.home-cards h3 {
+  margin-bottom: 5px;
+}
+
+.home-cards a {
+  display: inline-block;
+  padding-top: 10px;
+  color: #0067b8;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.home-cards a:hover i {
+  margin-left: 10px;
+}
+
+/* Xbox */
+.xbox {
+  width: 100%;
+  height: 350px;
+  background: url('https://media.istockphoto.com/id/1412914889/photo/closeup-the-brown-color-wheat-grains-in-hand-soft-focus-natural-brown-background.webp?b=1&s=170667a&w=0&k=20&c=Ut6JQk7mihNU-ebdOd3nJz_UdAybW-7Qdc2DXnFiZi4=') no-repeat center center/cover;
+  margin-bottom: 20px;
+}
+
+.xbox .content {
+  width: 40%;
+  padding: 50px 0 0 30px;
+}
+
+.xbox p, .carbon p {
+  margin: 10px 0 20px;
+}
+
+/* Carbon */
+.carbon {
+  width: 100%;
+  height: 350px;
+  background: url('https://media.istockphoto.com/id/157476197/photo/thai-rice-for-sale-in-a-market.webp?b=1&s=170667a&w=0&k=20&c=xo5xXC_Cuhbx-cJ38FCRCrpf2ZEKJImPMKTwm_9mv9o=') no-repeat center center/cover;
+}
+
+.carbon .content {
+  width: 55%;
+  padding: 100px 0 0 30px;
+}
+
+/* Follow */
+.follow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 30px 0 30px;
+}
+
+.follow * {
+  margin-right: 10px;
+}
+
+/* Links */
+.links {
+  background: #f2f2f2;
+  color: #616161;
+  font-size: 12px;
+  padding: 35px 0;
+}
+
+.links-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.links li {
+  line-height: 2.8;
+}
+
+/* Footer */
+.footer {
+  background: #f2f2f2;
+  color: #616161;
+  font-size: 12px;
+  padding: 20px 0;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer div {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.footer div i {
+  margin-right: 10px;
+}
+
+.footer ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer li {
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+
+@media(max-width: 700px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .menu-btn:hover {
+    opacity: 0.5;
+  }
+
+  .main-nav ul.right-menu {
+    margin-right: 50px;
+  }
+
+  .main-nav ul.main-menu {
+    display: block;
+    position: absolute;
+    top:0;
+    left: 0;
+    background: #f2f2f2;
+    width: 50%;
+    height: 100%;
+    border-right: #ccc 1px solid;
+    opacity: 0.9;
+    padding: 30px;
+    transform: translateX(-500px);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .main-nav ul.main-menu li {
+    padding: 10px;
+    border-bottom: #ccc solid 1px;
+    font-size: 14px;
+  }
+
+  .main-nav ul.main-menu li:last-child {
+    border-bottom: 0;
+  }
+
+  .main-nav ul.main-menu.show {
+    transform: translateX(-20px);
+  }
+
+  .home-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .xbox .content p {
+    display: none;
+  }
+
+  .xbox .content h2 {
+    margin-bottom: 20px;
+  }
+
+  .carbon .content {
+    width: 85%;
+  }
+
+  .links .links-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 500px) {
+  .home-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .links .links-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .links .links-inner ul {
+    margin-bottom: 20px;
+  }
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+</head>
+
+<body translate="no">
+  <div class="menu-btn">
+    <i class="fas fa-bars fa-2x"></i>
+  </div>
+
+  <div class="container">
+    <!-- Nav -->
+    <nav class="main-nav">
+      <h1><a href="index.html">KrishiCulture</a></h1>
+
+      <ul class="main-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="seller.html">Seller's Portal</a></li>
+        <li><a href="dect.html">Crop Detection</a></li>
+        <li><a href="login.html">Login &Sign Up</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+
+      <ul class="right-menu">
+        <li>
+          <a href="#">
+            <i class="fas fa-search"></i>
+          </a>
+        </li>
+        <li>
+          <a href="cart.html">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Showcase -->
+    <header class="showcase">
+      <h2>KrishiCulture</h2>
+      <p>
+        One Stop Solution For All Farmers Problems 
+      </p>
+      <a href="cart.html" class="btn">
+        Lets Add To Cart <i class="fas fa-chevron-right"></i>
+      </a>
+    </header>
+    <section class="home-cards">
+      <div>
+        <img src="https://media.istockphoto.com/id/1301675046/photo/variety-kinds-of-natural-cereal-and-grain-seed-in-sack-and-dark-tone-for-clean-food-raw.webp?b=1&s=170667a&w=0&k=20&c=OlQAhVFKLiK26iMVKrcc-GWz8fOtdr26KWTPumobR6w=" alt="">
+        <h3>Pulses</h3>
+        <a href="cart.html">Add To Cart <i class="fas fa-chevron-right"></i></a>
+      </div>
+      <div>
+        <img src="https://media.istockphoto.com/id/1432328961/photo/close-up-of-a-mix-of-organic-sprout-seeds-sprouting-bowl-contains-almond-groundnut-black-gram.webp?b=1&s=170667a&w=0&k=20&c=cfIXdajVmOi7PoZZNsxL1G7U-7cIKEl5b-ukYzDQ18E=" alt="">
+        <h3>Moong Dal</h3>
+        <a href="cart.html">Add To Cart <i class="fas fa-chevron-right"></i></a>
+      </div>
+      <div>
+        <img src="https://media.istockphoto.com/id/659524906/photo/composition-with-variety-of-vegetarian-food-ingredients.jpg?s=612x612&w=0&k=20&c=AzFdpJXWAVArpzTxJxhUqCENYcYb2ozltPhYaYJAkFQ=" alt="">
+        <h3>Unsplit Dal</h3> 
+        <a href="#">Add To Cart <i class="fas fa-chevron-right"></i></a>
+      </div>
+      <div>
+        <img src="https://media.istockphoto.com/id/1025774150/photo/various-raw-legumes-and-rice-in-bowls.jpg?s=612x612&w=0&k=20&c=UpVTYCBM2t0rSY-FatOt2DUWY-wGJ9CQdFYeGHyCpbE=" alt="">
+        <h3>Organic Dal</h3>
+        <a href="cart.html">Add To Cart <i class="fas fa-chevron-right"></i></a>
+      </div>
+    </section>
+
+    <section class="xbox">
+      <div class="content">
+        <h2>Wheat</h2>
+       
+          <a href="cart.html" class="btn">
+            Organic wheat<i class="fas fa-chevron-right"></i>
+          </a>
+      </div>
+    </section>
+			<section class="home-cards">
+				<div>
+					<img src="https://media.istockphoto.com/id/178173788/photo/helping-hands.jpg?s=612x612&w=0&k=20&c=CpRtXREqb5MKrOc8KE4OA4d0vHgxnXb-g0OV6qTo8AA=" alt="">
+					<h3>Millet</h3>
+					
+					<a href="cart.html">Add To Cart <i class="fas fa-chevron-right"></i></a>
+				</div>
+				<div>
+					<img src="https://media.istockphoto.com/id/1459316850/photo/mustard-is-the-most-popular-food-in-bangladesh.jpg?s=612x612&w=0&k=20&c=0JE_qerhGrwgCWpWLGAN_PTToyRckPbgs-uiQW_YaYc=" alt="">
+					<h3>Rai</h3>
+					<a href="cart.html">Add To Cart <i class="fas fa-chevron-right"></i></a>
+				</div>
+				<div>
+					<img src="https://media.istockphoto.com/id/1458975193/photo/red-lentil-seeds.jpg?s=612x612&w=0&k=20&c=eb5Li6oqVm4m8jyrIrBuPcJSsiiS7H_YSdkUNIE_tUg=" alt="">
+					<h3>White Beans</h3>
+					<a href="cart.html">Add To Cart <i class="fas fa-chevron-right"></i></a>
+				</div>
+				<div>
+					<img src="https://media.istockphoto.com/id/1254920732/photo/jowar-grains-on-vintage-background.webp?b=1&s=170667a&w=0&k=20&c=UfL5ypP2w7A8w5pJo7iZb6xdQkPIRU5R4dWZaOPf0sc=" alt="">
+					<h3>Dhana</h3>
+					<a href="cart.html">Add to Cart<i class="fas fa-chevron-right"></i></a>
+				</div>
+      </section>
+      
+      <!-- Carbon -->
+      <section class="carbon dark">
+        <div class="content">
+          <h2>Rice - From Jharkhand</h2>
+         
+            <a href="cart.html" class="btn">
+              Add To Cart <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+      </section>
+
+    </div>
+      <script id="rendered-js">
+document.querySelector('.menu-btn').addEventListener('click', () => document.querySelector('.main-menu').classList.toggle('show'));
+//# sourceURL=pen.js
+    </script>
+
+  
+
+
+
+</body></html>
